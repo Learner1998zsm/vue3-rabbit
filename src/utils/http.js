@@ -6,15 +6,21 @@ const service = axios.create({
 })
 
 // 请求拦截器
-service.interceptors.request.use(config => {
-  return config
-})
-.catch(err => Promise.resolve(err))
+service.interceptors.request
+  .use(
+    config => {
+      return config
+    },
+    err => Promise.resolve(err)
+  )
 
 // 响应拦截器
-service.interceptors.response.use(response => {
-  return response.data
-})
-.catch(err => Promise.resolve(err))
+service.interceptors.response
+  .use(
+    response => {
+      return response.data
+    },
+    err => Promise.resolve(err)
+  )
 
 export default service

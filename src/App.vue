@@ -8,10 +8,12 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div>
-    <el-button type="primary" >button</el-button>
-  </div>
+  <div class="test">test scss 变量</div>
+  <router-view />
 </template>
 
-<style>
+<style lang="scss" scoped>
+.test {
+  color: $priceColor
+}
 </style>
