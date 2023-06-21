@@ -92,8 +92,8 @@ const playHandler = () => {
     left: 0;
     z-index: 100;
     opacity: 0;
+    transition: opacity 0.5s linear;
     &.fade {
-      transition: all 0.3s linear;
       z-index: 101;
       opacity: 1;
     }

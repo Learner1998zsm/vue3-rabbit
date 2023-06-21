@@ -24,6 +24,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 .home-banner {
   width: 100%;
+  height: 500px;
   position: absolute;
   top: 0;
   left: 0;

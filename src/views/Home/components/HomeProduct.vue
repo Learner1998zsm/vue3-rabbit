@@ -1,3 +1,10 @@
+<script setup>
+import HomePanel from './HomePanel.vue';
+</script>
+
 <template>
-  <div>这是产品</div>
+  <div class="home-product">
+    <home-panel />
+    <home-panel />
+  </div>
 </template>

@@ -18,6 +18,7 @@ const {cateList} = storeToRefs(cateListStore)
 <style lang="scss" scoped>
 .home-category {
   width: 250px;
+  height: 500px;
   position: relative;
   z-index: 999;
   background: rgba(0,0,0,.8);
