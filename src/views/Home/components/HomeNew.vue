@@ -69,8 +69,8 @@ onMounted(() => {
       }
     }
     &:hover {
-      transform: scale(1.01);
-      box-shadow: 0 1px 10px rgba(0,0,0,.3);
+      transform: translate3d(0,-3px,0);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
     }
   }
 }

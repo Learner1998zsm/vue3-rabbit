@@ -36,6 +36,9 @@ defineExpose({
         <h3 class="panel-title">
           {{ title }} <small>{{ subtitle }}</small>
         </h3>
+        <div class="header-nav">
+          <slot name="nav"></slot>
+        </div>
         <div class="header-right">
           <router-link to="/" class="all" v-if="btnType == 1"
             >查看全部<i class="iconfont icon-angleright"></i
@@ -66,12 +69,16 @@ defineExpose({
 </template>
 
 <style scoped lang="scss">
+.home-panel {
+  padding-bottom: 20px;
+}
 .panel-header {
   padding: 40px 0;
   display: flex;
   justify-content: space-between;
   align-items: end;
   .panel-title {
+    flex: 1;
     font-size: 32px;
     font-weight: 500;
     color: #333;
@@ -84,7 +91,7 @@ defineExpose({
     .all {
       color: #999;
       font-size: 16px;
-      line-height: 20px;
+      line-height: 22px;
       i {
         margin-left: 4px;
         font-size: 14px;

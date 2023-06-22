@@ -47,13 +47,13 @@ onMounted(() => {
     }
     width: 306px;
     height: 406px;
-    background-color: #f0f9f4;
     img {
       width: 306px;
       height: 306px;
       font-size: 0;
     }
     .info-box {
+
       text-align: center;
       .title {
         padding: 12px 30px 0;
@@ -70,8 +70,8 @@ onMounted(() => {
       }
     }
     &:hover {
-      transform: scale(1.01);
-      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+      transform: translate3d(0,-3px,0);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
     }
   }
 }

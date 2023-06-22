@@ -20,3 +20,11 @@ export function getHotGoodsAPI() {
 export function getHotBrandsAPI({limit}) {
     return http.get('/home/brand?limit=' + limit)
 }
+// 商品区
+export function getGoodsListAPI() {
+    return http.get('/home/goods')
+}
+// 最新专题
+export function getSpecialAPI() {
+    return http.get('/home/special')
+}

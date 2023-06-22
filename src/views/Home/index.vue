@@ -5,6 +5,7 @@ import HomeNew from './components/HomeNew.vue'
 import HomeHot from './components/HomeHot.vue'
 import HomeBrands from './components/HomeBrands.vue'
 import HomeProduct from './components/HomeProduct.vue'
+import HomeSpecial from './components/HomeSpecial.vue'
 </script>
 
 <template>
@@ -18,6 +19,7 @@ import HomeProduct from './components/HomeProduct.vue'
   <HomeHot />
   <HomeBrands />
   <HomeProduct />
+  <HomeSpecial />
 </template>
 
 <style lang="scss" scoped>
