@@ -106,6 +106,7 @@ const playHandler = () => {
   }
 
   .pagenation {
+    padding-left: 250px;
     width: 100%;
     height: 50px;
     position: absolute;

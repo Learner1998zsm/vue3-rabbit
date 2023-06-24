@@ -55,7 +55,7 @@ const nextHandler = () => {
           <ul class="brands-list">
             <li class="brands-item" v-for="brand in brandsList" :key="brand.id">
               <router-link to="/">
-                <img :src="brand.picture" alt="" />
+                <img v-lazy="brand.picture" alt="" />
               </router-link>
             </li>
           </ul>

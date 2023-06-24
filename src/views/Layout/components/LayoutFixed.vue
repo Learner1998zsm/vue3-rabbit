@@ -19,7 +19,7 @@ window.addEventListener('scroll', e => {
       <!-- 导航栏 -->
       <ul class="app-header-sticky-nav">
         <li><router-link to="/">首页</router-link></li>
-        <li v-for="cate in cateList" :key="cate.id"><router-link to="/">{{cate.name}}</router-link></li>
+        <li v-for="cate in cateList" :key="cate.id"><router-link :to="`/category/${cate.id}`">{{cate.name}}</router-link></li>
       </ul>
       <div class="right">
         <router-link to="/">品牌</router-link>

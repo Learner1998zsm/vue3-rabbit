@@ -1,5 +1,6 @@
 <script setup>
 import HomePanel from "./HomePanel.vue";
+import GoodsItem from "@/components/GoodsItem.vue";
 import { getGoodsListAPI } from "@/apis/home.js";
 import { onMounted, ref } from "vue";
 const list = ref([]);
@@ -31,7 +32,7 @@ onMounted(() => {
         <div class="goods-container">
           <div class="goods-left">
             <router-link to="/">
-              <img :src="item.picture" alt="" />
+              <img v-lazy="item.picture" alt="" />
             </router-link>
             <strong class="label">
               <span>{{ item.name }}馆</span>
@@ -40,8 +41,17 @@ onMounted(() => {
           </div>
           <ul class="goods-list">
             <li v-for="goods in item.goods" :key="goods.id">
+              <goods-item :goods="goods" />
+              <div class="extra">
+                <router-link to="/">
+                  <span>找相似</span>
+                  <small>发现更多宝贝 ></small>
+                </router-link>
+              </div>
+            </li>
+            <!-- <li v-for="goods in item.goods" :key="goods.id">
               <router-link to="/">
-                <img :src="goods.picture" alt="" />
+                <img v-lazy="goods.picture" alt="" />
                 <p class="goods-name ellipsis-2">{{ goods.name }}</p>
                 <p class="goods-desc">{{ goods.desc }}</p>
                 <p class="goods-price">¥{{ goods.price }}</p>
@@ -52,7 +62,7 @@ onMounted(() => {
                   <small>发现更多宝贝 ></small>
                 </router-link>
               </div>
-            </li>
+            </li> -->
           </ul>
         </div>
       </template>
@@ -144,59 +154,59 @@ onMounted(() => {
       margin-right: 0;
     }
 
-    a {
-      display: block;
-      text-align: center;
-      font-size: 16px;
-      p {
-        margin-top: 6px;
-        text-align: left;
-      }
-      img {
-        width: 160px;
-        height: 160px;
-      }
-      .goods-desc {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        color: #666;
-      }
-      .goods-price {
-        margin-top: 10px;
-        font-size: 20px;
-        color: $priceColor;
-      }
-    }
-    .extra {
-      width: 240px;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      background-color: $xtxColor;
-      transform: translateY(101%);
-      transition: all .3s linear;
-      a {
-        padding: 3px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: #fff;
-        text-align: center;
-        span {
-          width: 120px;
+    //   a {
+    //     display: block;
+    //     text-align: center;
+    //     font-size: 16px;
+    //     p {
+    //       margin-top: 6px;
+    //       text-align: left;
+    //     }
+    //     img {
+    //       width: 160px;
+    //       height: 160px;
+    //     }
+    //     .goods-desc {
+    //       overflow: hidden;
+    //       white-space: nowrap;
+    //       text-overflow: ellipsis;
+    //       color: #666;
+    //     }
+    //     .goods-price {
+    //       margin-top: 10px;
+    //       font-size: 20px;
+    //       color: $priceColor;
+    //     }
+    //   }
+      .extra {
+        width: 240px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $xtxColor;
+        transform: translateY(101%);
+        transition: all .3s linear;
+        a {
+          padding: 3px 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          color: #fff;
+          text-align: center;
+          span {
+            width: 120px;
 
-          font-weight: 500;
-          font-size: 18px;
-          line-height: 40px;
-          border-bottom: 1px solid #fff;
-        }
-        small {
-          padding: 10px 0;
-          font-size: 14px;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 40px;
+            border-bottom: 1px solid #fff;
+          }
+          small {
+            padding: 10px 0;
+            font-size: 14px;
+          }
         }
       }
-    }
   }
 }
 </style>

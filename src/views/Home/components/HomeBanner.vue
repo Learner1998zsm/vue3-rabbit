@@ -1,11 +1,10 @@
 <script setup>
-import zsmCarouselVue from "@/components/zsmCarousel.vue";
 import { getBannerListAPI } from '@/apis/home.js'
 import { onMounted, ref } from "vue";
 const bannerList = ref([])
 const getBannerList = async () => {
   const res = await getBannerListAPI()
-  console.log({res});
+  // console.log({res});
   if(res.code === '1') {
     bannerList.value = res.result
   }
@@ -17,7 +16,7 @@ onMounted(() => {
 
 <template>
   <div class="home-banner">
-    <zsmCarouselVue :list="bannerList" />
+    <zsm-carousel :list="bannerList" />
   </div>
 </template>
 

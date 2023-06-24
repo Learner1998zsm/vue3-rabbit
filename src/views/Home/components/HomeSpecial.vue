@@ -19,7 +19,7 @@ onMounted(() => {
         <ul class="special-list">
           <li class="special-item" v-for="item in list" :key="item.id">
             <router-link to="/">
-              <img :src="item.cover" alt="" />
+              <img v-lazy="item.cover" alt="" />
               <div class="meta">
                 <div class="info-box">
                   <div class="info">
