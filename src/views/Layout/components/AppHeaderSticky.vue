@@ -1,26 +1,21 @@
 <script setup>
+import AppHeaderNav from "./AppHeaderNav.vue";
 import { ref } from "vue"
-import {useCateList} from '@/stores/cateList.js'
-import {storeToRefs} from 'pinia'
-const cateListStore = useCateList()
-const {cateList} = storeToRefs(cateListStore)
 
 let isShow = ref(false)
 window.addEventListener('scroll', e => {
   const scrollTop = document.documentElement.scrollTop
   isShow.value = scrollTop > 78
 })
+
 </script>
 
 <template>
-  <header class="app-header-sticky" :class="{show: isShow}">
+  <header class="app-header-sticky"  :class="{show: isShow}">
     <div class="container">
       <h1 class="logo"><router-link to="/"></router-link></h1>
       <!-- 导航栏 -->
-      <ul class="app-header-sticky-nav">
-        <li><router-link to="/">首页</router-link></li>
-        <li v-for="cate in cateList" :key="cate.id"><router-link :to="`/category/${cate.id}`">{{cate.name}}</router-link></li>
-      </ul>
+      <app-header-nav></app-header-nav>
       <div class="right">
         <router-link to="/">品牌</router-link>
         <router-link to="/">专题</router-link>
@@ -70,7 +65,8 @@ window.addEventListener('scroll', e => {
       line-height: 32px;
       font-size: 16px;
       color: #333;
-      &:hover {
+      &:hover,
+      &.active {
         color: $xtxColor;
         border-bottom: 1px solid $xtxColor;
       }
@@ -91,5 +87,8 @@ window.addEventListener('scroll', e => {
       color: $xtxColor;
     }
   }
+}
+:deep(.drop-down) {
+  top: 80px !important;
 }
 </style>

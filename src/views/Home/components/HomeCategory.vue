@@ -33,8 +33,8 @@ const onMouseleave = () => {
         :key="cate.id"
         @mouseenter="onMouseenter(cate)"
       >
-        <router-link to="/">{{ cate.name }}</router-link>
-        <router-link v-for="(num, i) in 2" :key="i" to="/">{{
+        <router-link :to="`/category/${cate.id}`">{{ cate.name }}</router-link>
+        <router-link v-for="(num, i) in 2" :key="i" :to="`/category/sub/${cate.children[i]?.id}`">{{
           cate.children[i]?.name
         }}</router-link>
       </li>

@@ -22,7 +22,8 @@ h3,
 h4,
 p,
 dl,
-dd {
+dd,
+input {
   padding: 0;
   margin: 0;
 }
@@ -102,3 +103,20 @@ ul {
 .el-breadcrumb__inner.is-link {
   font-weight: 400 !important;
 }
+
+.fade-right-enter-from,
+.fade-right-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+.fade-right-enter-active,
+.fade-right-leave-active {
+  transition: all 0.5s;
+}
+.fade-right-enter-to,
+.fade-right-leave-from {
+  transform: none;
+  opacity: 1;
+}
+
+

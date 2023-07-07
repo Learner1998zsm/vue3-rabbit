@@ -24,14 +24,14 @@ onMounted(() => {
       <template #nav>
         <ul class="nav-list">
           <li class="nav-item" v-for="nav in item.children" :key="nav.id">
-            <router-link to="/">{{ nav.name }}</router-link>
+            <router-link :to="`/category/sub/${nav.id}`">{{ nav.name }}</router-link>
           </li>
         </ul>
       </template>
       <template #default>
         <div class="goods-container">
           <div class="goods-left">
-            <router-link to="/">
+            <router-link :to="`/category/${item.id}`">
               <img v-lazy="item.picture" alt="" />
             </router-link>
             <strong class="label">

@@ -8,9 +8,7 @@ const maxNumOfBrandsInScreen = 5
 const btnClickLimit = Math.ceil(limit / maxNumOfBrandsInScreen) - 1
 const getBrands = async () => {
   const res = await getHotBrandsAPI({ limit })
-  if (res.code === '1') {
-    brandsList.value = res.result
-  }
+    brandsList.value = res.result || []
 }
 onMounted(() => {
   getBrands()

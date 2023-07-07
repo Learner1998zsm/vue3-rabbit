@@ -1,13 +1,11 @@
 <script setup>
 import { getBannerListAPI } from '@/apis/home.js'
-import { onMounted, ref } from "vue";
+import { onMounted, ref } from 'vue'
 const bannerList = ref([])
 const getBannerList = async () => {
   const res = await getBannerListAPI()
   // console.log({res});
-  if(res.code === '1') {
-    bannerList.value = res.result
-  }
+    bannerList.value = res.result || []
 }
 onMounted(() => {
   getBannerList()
@@ -27,5 +25,13 @@ onMounted(() => {
   position: absolute;
   top: 0;
   left: 0;
+}
+:deep(.zsm-carousel) {
+  .pagination {
+    padding-left: 250px;
+  }
+  .prev {
+    left: 270px !important;
+  }
 }
 </style>

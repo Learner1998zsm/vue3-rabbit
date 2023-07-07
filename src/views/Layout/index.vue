@@ -1,26 +1,20 @@
 <script setup>
-import LayoutNav from './components/LayoutNav.vue'
-import LayoutHeader from './components/LayoutHeader.vue'
-import LayoutFooter from './components/LayoutFooter.vue'
-import LayoutFixed from './components/LayoutFixed.vue'
-import { onMounted, ref, VueElement } from 'vue'
-import {useCateList} from '@/stores/cateList.js'
-onMounted(() => {
-  const cateListStore = useCateList()
-  const { queryCateList } = cateListStore
-  queryCateList()
-})
-  
+import AppNavbar from './components/AppNavbar.vue'
+import AppHeader from './components/AppHeader.vue'
+import AppFooter from './components/AppFooter.vue'
+import AppHeaderSticky from './components/AppHeaderSticky.vue'
+import { useCateList } from '@/stores/cateList.js'
+const cateListStore = useCateList()
+const { queryCateList } = cateListStore
+queryCateList()
 </script>
 
 <template>
-  <LayoutFixed />
-  <LayoutNav />
-  <LayoutHeader />
+  <AppHeaderSticky />
+  <AppNavbar />
+  <AppHeader />
   <router-view />
-  <LayoutFooter />
+  <AppFooter />
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

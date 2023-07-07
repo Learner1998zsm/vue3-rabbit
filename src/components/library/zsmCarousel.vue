@@ -65,8 +65,8 @@ const playHandler = () => {
         /></router-link>
       </li>
     </ul>
-    <!-- pagenation -->
-    <ul class="pagenation">
+    <!-- pagination -->
+    <ul class="pagination">
       <li class="page-point" :class="{ active: indexId === i }" v-for="(item, i) in list" :key="item.id" @click="indexId = i"></li>
     </ul>
     <!-- button -->
@@ -80,10 +80,13 @@ const playHandler = () => {
 </template>
 
 <style lang="scss" scoped>
+  $height: 500px;
 .zsm-carousel {
-  height: 500px;
+  position: relative;
+  height: $height;
   .banner-box {
     position: relative;
+    height: $height;
   }
   .carousel-item {
     width: 100%;
@@ -98,15 +101,15 @@ const playHandler = () => {
       opacity: 1;
     }
     a {
+      display: block;
       img {
         width: 100%;
-        height: 500px;
+        height: $height;
       }
     }
   }
 
-  .pagenation {
-    padding-left: 250px;
+  .pagination {
     width: 100%;
     height: 50px;
     position: absolute;
@@ -145,7 +148,7 @@ const playHandler = () => {
       color: #fff;
     }
     &.prev {
-      left: 270px;
+      left: 20px;
     }
     &.next {
       right: 20px;
